@@ -91,6 +91,12 @@ client.on('message', function(message) {
         message.channel.send('https://www.youtube.com/watch?v=lP6mK2-nLIk&list=PLFA-AVTc6B3Guk3sO0teL4KBRpOmNDI78'
     )
 
+    if(message.author.bot) return;
+    else if(isValidCommand(message, "servername")) 
+        message.channel.send(message.guild.name)
+    
+
+
 
 
 
