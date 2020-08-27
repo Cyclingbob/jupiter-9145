@@ -199,7 +199,7 @@ const updateEmbed = new discord.MessageEmbed()
 		{ name: '**New Commands:** ', value: `${PREFIX}userinfo | ${PREFIX}serverinfo`},
   )
 
-    .setFooter(`For more info of the commands, use the **${PREFIX}help** command.`
+    .setFooter(`For more info of the commands, use the ${PREFIX}help command.`
 );
 
 const inviteEmbed = new discord.MessageEmbed()
