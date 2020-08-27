@@ -7,7 +7,7 @@ client.login(process.env.BOT_TOKEN)
 
 client.on('ready', () => {
     console.log(`${client.user.tag} has logged in.`)
-    client.user.setStatus("idle")
+    client.user.setActivity('Largest Planet In The Solar System')
 }); 
 
 
