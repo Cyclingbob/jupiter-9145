@@ -192,14 +192,14 @@ client.on('message', message => {
 
 const updateEmbed = new discord.MessageEmbed()
 	.setColor('RANDOM')
-	.setTitle('Version 0.0.1')
+	.setTitle('Version 0.0.2')
 	.setAuthor('Jupiter#9145')
 	.setDescription('**Updates**')
 	.addFields(
-		{ name: 'Removed all reactions', value: ':b:'},
+		{ name: '**New Commands:** ', value: `${PREFIX}userinfo | ${PREFIX}serverinfo`},
   )
 
-    .setFooter(`${PREFIX}updates`
+    .setFooter(`For more info of the commands, use the **${PREFIX}help** command.`
 );
 
 const inviteEmbed = new discord.MessageEmbed()
@@ -268,6 +268,6 @@ const aboutEmbed = new discord.MessageEmbed()
  .addFields(
   { name: '**Create Date**', value: '25/8/2020' },
   { name: '**Creator**', value: 'sbk.cholesterol#1511' },
-  { name: '**Version**', value: '0.0.1' },
+  { name: '**Version**', value: '0.0.2' },
 
 )
