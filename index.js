@@ -19,7 +19,12 @@ const rollDice = () => Math.floor(Math.random() * 6) + 1;
 client.on('message', function(message) {
     if(message.author.bot) return;
     if(isValidCommand(message, "hello")) 
-        message.reply('Hello!') 
+        message.channel.send('hi'
+    );
+
+    if(message.author.bot) return;
+    if(isValidCommand(message, "hi")) 
+        message.channel.send('hello');
     
     else if (isValidCommand(message, "rolldice")) 
         message.reply("Rolled a :game_die: " + rollDice()
@@ -77,7 +82,7 @@ client.on('message', function(message) {
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "about")) 
+    else if(isValidCommand(message, "info")) 
         message.channel.send(aboutEmbed
     )
 
@@ -180,7 +185,7 @@ const helpEmbed = new discord.MessageEmbed()
         { name: `${PREFIX}help`, value: 'This one!', inline: true },
         { name: `${PREFIX}ping`, value: 'Test if the bot is online or not.' },
         { name: `${PREFIX}gid.io`, value: 'Checks the funny website!' },
-        { name: `${PREFIX}about`, value: 'Displays the information about the bot.', inline: true },
+        { name: `${PREFIX}info`, value: 'Displays the information about the bot.', inline: true },
         { name: `${PREFIX}invite`, value: 'Gives you the invite link of this bot.', inline: true },
         { name: `${PREFIX}kick`, value: 'Kicks a user mentioned.', inline: true },
         { name: `${PREFIX}ban`, value: 'Bans a user mentioned.', inline: true },
@@ -191,6 +196,9 @@ const helpEmbed = new discord.MessageEmbed()
         { name: `${PREFIX}restart`, value: 'Run this command if the bot has any errors.', inline: true },
         { name: `${PREFIX}support`, value: 'Contact the dev by joining my support server.', inline: true },
         { name: `${PREFIX}rolldice`, value: 'Rolls a dice! :game_die:', inline: true },
+        { name: `${PREFIX}hello`, value: 'Greetings', inline: true },
+        { name: `${PREFIX}hi`, value: 'Greetings', inline: true },
+
         )
     
         .setTimestamp()
