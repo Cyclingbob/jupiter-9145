@@ -10,8 +10,6 @@ client.on('ready', () => {
     client.user.setActivity('Largest Planet In The Solar System')
 }); 
 
-
-
 const isValidCommand = (message, cmdName) => message.content.toLowerCase().startsWith(PREFIX + cmdName)
 
 const rollDice = () => Math.floor(Math.random() * 6) + 1;
@@ -92,8 +90,37 @@ client.on('message', function(message) {
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "servername")) 
-        message.channel.send(message.guild.name)
+    else if(isValidCommand(message, "serverinfo")) 
+        message.channel.send(`Server Name: ${message.guild.name}`
+    )
+
+    if(message.author.bot) return;
+    else if(isValidCommand(message, "serverinfo")) 
+        message.channel.send(`Server Owner: ${message.guild.owner}`
+        )
+
+    if(message.author.bot) return;
+    else if(isValidCommand(message, "serverinfo")) 
+        message.channel.send(`Created At: ${message.guild.createdAt}`
+    )
+
+    if(message.author.bot) return;
+    else if(isValidCommand(message, "serverinfo")) 
+        message.channel.send(`Total Members: ${message.guild.memberCount}`
+    )
+
+    if(message.author.bot) return;
+    else if(isValidCommand(message, "userinfo")) 
+        message.channel.send(`Username: ${message.author.username}`
+    );
+
+    if(message.author.bot) return;
+    else if(isValidCommand(message, "userinfo")) 
+        message.channel.send(`ID: ${message.author.id}`);
+
+
+
+
     
 
 
@@ -202,6 +229,8 @@ const helpEmbed = new discord.MessageEmbed()
         { name: `${PREFIX}restart`, value: 'Run this command if the bot has any errors.', inline: true },
         { name: `${PREFIX}support`, value: 'Contact the dev by joining my support server.', inline: true },
         { name: `${PREFIX}rolldice`, value: 'Rolls a dice! :game_die:', inline: true },
+        { name: `${PREFIX}serverinfo`, value: 'Shows the general info of the server.', inline: true },
+        { name: `${PREFIX}userinfo`, value: 'Shows your Username and ID.', inline: true },
         { name: `${PREFIX}hello`, value: 'Greetings', inline: true },
         { name: `${PREFIX}hi`, value: 'Greetings', inline: true },
 
