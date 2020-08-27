@@ -190,6 +190,7 @@ const helpEmbed = new discord.MessageEmbed()
         { name: `${PREFIX}playlist`, value: 'My channel\'s playlist.', inline: true },
         { name: `${PREFIX}restart`, value: 'Run this command if the bot has any errors.', inline: true },
         { name: `${PREFIX}support`, value: 'Contact the dev by joining my support server.', inline: true },
+        { name: `${PREFIX}rolldice`, value: 'Rolls a dice! :game_die:', inline: true },
         )
     
         .setTimestamp()
