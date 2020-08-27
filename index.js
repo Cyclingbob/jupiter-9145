@@ -146,17 +146,17 @@ client.on('message', message => {
           member
             .kick()
             .then(() => {
-              message.reply(`:white_check_mark: Successfully kicked **${user.tag}**`);
+              message.channel.send(`:white_check_mark: Successfully kicked **${user.tag}**. ${message.author}`);
             })
             .catch(err => {
-              message.reply(':x: I was unable to kick the member');
+              message.channel.send(`:x: I was unable to kick the member. ${message.author}`);
               console.error(err);
             });
         } else {
-          message.reply(":x: That user isn't in this guild!");
+          message.channel.send(`:x: That user isn't in this guild! ${message.author}`);
         }
       } else {
-        message.reply(":x: Please mention the user that you want to kick!");
+        message.channel.send(`:x: Please mention the user that you want to kick! ${message.author}`);
       }
     }
 });
@@ -174,17 +174,17 @@ client.on('message', message => {
               reason: '',
             })
             .then(() => {
-              message.reply(`:white_check_mark: Successfully banned **${user.tag}**`);
+              message.channel.send(`:white_check_mark: Successfully banned **${user.tag}**. ${message.author}`);
             })
             .catch(err => {
-              message.reply(':x: I was unable to ban the member');
+              message.channel.send(`:x: I was unable to ban the member. ${message.author}`);
               console.error(err);
             });
         } else {
-          message.reply(":x: That user isn't in this guild!");
+          message.channel.send(":x: That user isn't in this guild!");
         }
       } else {
-        message.reply(":x: Please mention the user that you want to ban!");
+        message.channel.send(":x: Please mention the user that you want to ban!");
       }
     }
   });
