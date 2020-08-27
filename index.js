@@ -116,16 +116,8 @@ client.on('message', function(message) {
 
     if(message.author.bot) return;
     else if(isValidCommand(message, "userinfo")) 
-        message.channel.send(`ID: ${message.author.id}`);
-
-
-
-
-    
-
-
-
-
+        message.channel.send(`ID: ${message.author.id}`
+    );
 
 });
 
@@ -237,7 +229,7 @@ const helpEmbed = new discord.MessageEmbed()
         )
     
         .setTimestamp()
-        .setFooter('Join my support server by using s;support if you have any problems.'
+        .setFooter('Join my support server by using s.support if you have any problems.'
 ) 
 
 const ytEmbed = new discord.MessageEmbed()
