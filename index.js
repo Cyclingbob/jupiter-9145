@@ -86,7 +86,7 @@ client.on('message', function(message) {
 
     if(message.author.bot) return;
     else if(isValidCommand(message, "playlist")) 
-        message.channel.send('https://www.youtube.com/watch?v=lP6mK2-nLIk&list=PLFA-AVTc6B3Guk3sO0teL4KBRpOmNDI78'
+        message.channel.send('https://www.youtube.com/watch?v=abYP-NPLTbw&list=PLFA-AVTc6B3Guk3sO0teL4KBRpOmNDI78'
     )
 
     if(message.author.bot) return;
