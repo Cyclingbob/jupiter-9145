@@ -92,13 +92,13 @@ client.on('message', function(message) {
 
     if(message.author.bot) return;
     else if(isValidCommand(message, "serverinfo")) 
-        message.channel.send(`Server Owner: ${message.guild.name}`
+        message.channel.send(`Server Name: ${message.guild.name}`
         )
 
 
     if(message.author.bot) return;
     else if(isValidCommand(message, "serverinfo")) 
-        message.channel.send(`Server Name: ${message.guild.owner}`
+        message.channel.send(`Server Owner: ${message.guild.owner}`
         )
 
     if(message.author.bot) return;
