@@ -1,14 +1,14 @@
-require('dotenv').config(); 
-const discord = require('discord.js'); 
-const client = new discord.Client(); 
+require('dotenv').config();
+const discord = require('discord.js');
+const client = new discord.Client();
 const config = require('./config/config.json')
 const PREFIX = process.env.PREFIX;
-client.login(process.env.BOT_TOKEN) 
+client.login(process.env.BOT_TOKEN)
 
 client.on('ready', () => {
     console.log(`${client.user.tag} has logged in.`)
     client.user.setActivity('7 Servers! | The Largest Planet In The Solar System')
-}); 
+});
 
 const isValidCommand = (message, cmdName) => message.content.toLowerCase().startsWith(PREFIX + cmdName)
 
@@ -16,106 +16,106 @@ const rollDice = () => Math.floor(Math.random() * 6) + 1;
 
 client.on('message', function(message) {
     if(message.author.bot) return;
-    if(isValidCommand(message, "hello")) 
+    if(isValidCommand(message, "hello"))
         message.channel.send('hi'
     );
 
     if(message.author.bot) return;
-    if(isValidCommand(message, "hi")) 
+    if(isValidCommand(message, "hi"))
         message.channel.send('hello');
-    
-    else if (isValidCommand(message, "rolldice")) 
+
+    else if (isValidCommand(message, "rolldice"))
         message.reply("Rolled a :game_die: " + rollDice()
     );
-    
+
     if(message.author.bot) return;
-    else if(isValidCommand(message, "halp")) 
+    else if(isValidCommand(message, "halp"))
         message.channel.send(helpEmbed
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "help")) 
+    else if(isValidCommand(message, "help"))
         message.channel.send(helpEmbed
     )
 
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "invite")) 
+    else if(isValidCommand(message, "invite"))
         message.channel.send(inviteEmbed
     )
-    
+
     if(message.author.bot) return;
-    else if(isValidCommand(message, "gid.io")) 
+    else if(isValidCommand(message, "gid.io"))
         message.channel.send('Check out https://gid.io ! The new .io domain for sale starting from 4,930 USD!'
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "updates")) 
+    else if(isValidCommand(message, "updates"))
         message.channel.send(updateEmbed
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "youtube")) 
+    else if(isValidCommand(message, "youtube"))
         message.channel.send(ytEmbed
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "support")) 
+    else if(isValidCommand(message, "support"))
         message.channel.send(supportEmbed
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "ping")) 
+    else if(isValidCommand(message, "ping"))
         message.channel.send('Pong!'
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "restart")) 
+    else if(isValidCommand(message, "restart"))
         message.channel.send('Restarting... This could take 30 seconds. If the error keeps on happening, join my support server by using **s;support**.'
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "avatar")) 
+    else if(isValidCommand(message, "avatar"))
         message.reply(message.author.displayAvatarURL()
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "info")) 
+    else if(isValidCommand(message, "info"))
         message.channel.send(aboutEmbed
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "playlist")) 
+    else if(isValidCommand(message, "playlist"))
         message.channel.send('https://www.youtube.com/watch?v=abYP-NPLTbw&list=PLFA-AVTc6B3Guk3sO0teL4KBRpOmNDI78'
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "serverinfo")) 
-        message.channel.send(`Server Name: ${message.guild.name}`
+    else if(isValidCommand(message, "serverinfo"))
+        message.channel.send(serverEmbed
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "serverinfo")) 
+    else if(isValidCommand(message, "serverinfo"))
         message.channel.send(`Server Owner: ${message.guild.owner}`
         )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "serverinfo")) 
+    else if(isValidCommand(message, "serverinfo"))
         message.channel.send(`Created At: ${message.guild.createdAt}`
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "serverinfo")) 
+    else if(isValidCommand(message, "serverinfo"))
         message.channel.send(`Total Members: ${message.guild.memberCount}`
     )
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "userinfo")) 
+    else if(isValidCommand(message, "userinfo"))
         message.channel.send(`Username: ${message.author.username}`
     );
 
     if(message.author.bot) return;
-    else if(isValidCommand(message, "userinfo")) 
+    else if(isValidCommand(message, "userinfo"))
         message.channel.send(`ID: ${message.author.id}`
     );
 
@@ -152,7 +152,7 @@ client.on('message', message => {
       }
     }
 });
-  
+
 
 client.on('message', message => {
     if (!message.guild) return;
@@ -227,10 +227,10 @@ const helpEmbed = new discord.MessageEmbed()
         { name: `${PREFIX}hi`, value: 'Greetings', inline: true },
 
         )
-    
+
         .setTimestamp()
         .setFooter('Join my support server by using s.support if you have any problems.'
-) 
+)
 
 const ytEmbed = new discord.MessageEmbed()
 	.setColor('RANDOM')
@@ -245,7 +245,7 @@ const ytEmbed = new discord.MessageEmbed()
     .addFields(
     { name: '**EnrichAviationGaming**', value: 'https://www.youtube.com/c/enrichaviationgaming' },
     )
-    
+
     .setFooter(`${PREFIX}youtube`
 );
 
@@ -263,3 +263,12 @@ const aboutEmbed = new discord.MessageEmbed()
   { name: '**Version**', value: '0.0.2' },
 
 )
+client.on('message', function(message) {
+  const serverEmbed = new discord.MessageEmbed()
+	.setColor('RANDOM')
+	.setTitle(`${message.guild.name}`)
+    .addFields(
+        { name: `Owner`, value: `${message.guild.owner}`, inline: true },
+        { name: `Total members`, value: `${message.guild.memberCount}` }
+         ) .setFooter(`Server created at ${message.guild.createdAt}.`
+  )});
