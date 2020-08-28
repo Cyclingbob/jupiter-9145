@@ -7,7 +7,7 @@ client.login(process.env.BOT_TOKEN)
 
 client.on('ready', () => {
     console.log(`${client.user.tag} has logged in.`)
-    client.user.setActivity('The Largest Planet In The Solar System')
+    client.user.setActivity('7 Servers! | The Largest Planet In The Solar System')
 }); 
 
 const isValidCommand = (message, cmdName) => message.content.toLowerCase().startsWith(PREFIX + cmdName)
